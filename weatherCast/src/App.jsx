@@ -4,15 +4,16 @@ const App = () => {
   return (
     <div className='cont'>
       <div className="search-sectn">
-        <form action="#"className='seach-fom'>
-          <span className="searchSymbol">🔎</span>
+        <form action="#"className='search-form'>
+
+          <img className="searchSymbol" src='/src/assets/search.png' />
           <input type="search" placeholder="Enter City name" required className="search-input" />
         </form>
-        <button className="location">🧭</button>
+        <button className="location"><img src="/src/assets/location.png" alt="" /></button>
       </div>
 
       <div className="weatherSecn">
-        <div className="currentWeather">
+        <div className="current-weather">
           <img src='/src/assets/cloudy.png' className="weather-icon" />
           <h2 className="temp">20 <span>°C</span></h2>
           <p className="desc">Partly Cloudy</p>
@@ -21,8 +22,33 @@ const App = () => {
           <ul className="weather-list">
             <li className="weather-item">
               <p className="time">00:00</p>
-              <img src="src/assets/cloudy.png" alt="" />
-              <p className="temp"></p>
+              <img src="src/assets/cloudy.png" className="weather-icon" />
+              <p className="temp">20°C</p>
+            </li>
+            <li className="weather-item">
+              <p className="time">00:00</p>
+              <img src="src/assets/cloudy.png" className="weather-icon" />
+              <p className="temp">20°C</p>
+            </li>
+            <li className="weather-item">
+              <p className="time">00:00</p>
+              <img src="src/assets/cloudy.png" className="weather-icon" />
+              <p className="temp">20°C</p>
+            </li>
+            <li className="weather-item">
+              <p className="time">00:00</p>
+              <img src="src/assets/cloudy.png" className="weather-icon" />
+              <p className="temp">20°C</p>
+            </li>
+            <li className="weather-item">
+              <p className="time">00:00</p>
+              <img src="src/assets/cloudy.png" className="weather-icon" />
+              <p className="temp">20°C</p>
+            </li>
+            <li className="weather-item">
+              <p className="time">00:00</p>
+              <img src="src/assets/cloudy.png" className="weather-icon" />
+              <p className="temp">20°C</p>
             </li>
           </ul>
         </div>
