@@ -1,55 +1,36 @@
-import React from 'react'
+import { useState } from "react";
+import CurrentWeather from "./components/CurrentWeather";
+import HourlyWeather from "./components/HourlyWeather";
+import Search from "./components/Search.jsx";
+import { weatherCodes } from "./constant.js";
 
 const App = () => {
+  const [currentWeather, setCurrentWeather] = useState()
+
+  const getWeather = async (API_URL) =>{
+    try{
+      const response = await fetch(API_URL);
+      const data = await response.json();
+      const temperature = data.current.temp_c;
+      const description = data.current.condition.text;
+      const weatherIcon = Object.keys(weatherCodes).find(icon => weatherCodes[icon].includes(data.current.condition.code))
+
+      setCurrentWeather({temperature, description, weatherIcon})
+      console.log(data);
+    }catch (error){
+      console.log(error);
+    }
+  }
   return (
     <div className='cont'>
-      <div className="search-sectn">
-        <form action="#"className='search-form'>
-
-          <img className="searchSymbol" src='/src/assets/search.png' />
-          <input type="search" placeholder="Enter City name" required className="search-input" />
-        </form>
-        <button className="location"><img src="/src/assets/location.png" alt="" /></button>
-      </div>
+      <Search getWeather={getWeather} />
 
       <div className="weatherSecn">
-        <div className="current-weather">
-          <img src='/src/assets/cloudy.png' className="weather-icon" />
-          <h2 className="temp">20 <span>°C</span></h2>
-          <p className="desc">Partly Cloudy</p>
-        </div>
+        <CurrentWeather currentWeather = {currentWeather}/>
+        
         <div className="hourly-cast">
           <ul className="weather-list">
-            <li className="weather-item">
-              <p className="time">00:00</p>
-              <img src="src/assets/cloudy.png" className="weather-icon" />
-              <p className="temp">20°C</p>
-            </li>
-            <li className="weather-item">
-              <p className="time">00:00</p>
-              <img src="src/assets/cloudy.png" className="weather-icon" />
-              <p className="temp">20°C</p>
-            </li>
-            <li className="weather-item">
-              <p className="time">00:00</p>
-              <img src="src/assets/cloudy.png" className="weather-icon" />
-              <p className="temp">20°C</p>
-            </li>
-            <li className="weather-item">
-              <p className="time">00:00</p>
-              <img src="src/assets/cloudy.png" className="weather-icon" />
-              <p className="temp">20°C</p>
-            </li>
-            <li className="weather-item">
-              <p className="time">00:00</p>
-              <img src="src/assets/cloudy.png" className="weather-icon" />
-              <p className="temp">20°C</p>
-            </li>
-            <li className="weather-item">
-              <p className="time">00:00</p>
-              <img src="src/assets/cloudy.png" className="weather-icon" />
-              <p className="temp">20°C</p>
-            </li>
+            <HourlyWeather/>
           </ul>
         </div>
       </div>

@@ -11,6 +11,7 @@ body{
     justify-content: center;
     min-height: 100vh;
     background: linear-gradient(#ffc0cb, rgb(172, 243, 206));
+    padding: 2rem;
 }
 #root{
     width: 100%;
