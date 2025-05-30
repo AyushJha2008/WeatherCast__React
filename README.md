@@ -5,4 +5,4 @@
 
 # Preview
 
-![Output Image](./src/assets/output.png)
+![Output Image](weatherCast/output.png)
