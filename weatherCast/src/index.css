@@ -26,11 +26,12 @@ body{
 }
 .search-sectn{
     gap: 10px;
-    padding: 15px 15px 0;
+    padding: 15px 15px 15px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content:space-between;
+    
 }
 .searchSymbol{
     height: 2rem;
@@ -94,6 +95,10 @@ body{
     justify-content: space-around;
     list-style: none;
     border-top: 1px solid grey;
+    overflow: scroll;
+    scrollbar-width: none;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 .weather-item{
     padding: 1rem 1rem;
@@ -103,3 +108,27 @@ body{
     width: 2rem;
     margin: 8px 0;
 }
+.no-result{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 1.5rem;
+   color: white;
+   padding: 2rem;
+   padding-top: 10px;
+   text-align: center;
+}
+.no-result img{
+    height: 6rem;
+    width: 6rem;
+}
+/* @media(max-width:624px){
+    body,
+    .search-sectn{
+        padding: 20px;
+    }
+    .weather-list{
+        padding: 16px 20px;
+    }
+} */
