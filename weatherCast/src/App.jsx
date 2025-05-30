@@ -35,9 +35,9 @@ const App = () => {
   useEffect(()=>{
     const defaultCity = "Mumbai"
     const API_KEY = import.meta.env.VITE_API_KEY;
-    const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${defaultCity}}&days=2`
+    const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${defaultCity}&days=2`
     getWeather(API_URL)
-  })
+  },[])
 
   return (
     <div className='cont'>
