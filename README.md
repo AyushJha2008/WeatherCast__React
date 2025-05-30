@@ -1,3 +1,6 @@
+Today (30 may 2025) i completed my another React project WeatherCast, a weather forecasting web app made with help of WeatherAPI. follow me and stay tunned for more projets.
+- keep learning, keep growing 
+
 ## How to Run:
 
 - cd weatherCast
@@ -5,4 +8,4 @@
 
 # Preview
 
-![Output Image](./src/assets/output.png)
+![Output Image](weatherCast/output.png)
